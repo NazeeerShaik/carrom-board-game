@@ -6,30 +6,13 @@ import static org.mockito.Mockito.when;
 
 public class PlayerTest {
     @Test
-    public void shouldReturnNumberOfPokedCoinsIfStrikeIsSuccess() {
-        Player player = mock(Player.class);
+    public void shouldReturnNumberOfCoinsPoked() {
+        Player player = new Player();
+        RandomNumber randomNumber = mock(RandomNumber.class);
+        when(randomNumber.getNumber()).thenReturn(1);
 
-        when(player.getNumberOfPokedCoins()).thenReturn(0);
+        int expected = player.strike();
 
-        Assert.assertEquals(player.getNumberOfPokedCoins(), 0);
-    }
-
-    @Test
-    public void shouldReturnNumberOfPokedCoinsIfStrikeIsSuccessV2() {
-        Player player = mock(Player.class);
-
-        when(player.getNumberOfPokedCoins()).thenReturn(2);
-
-        Assert.assertEquals(player.getNumberOfPokedCoins(), 2);
-    }
-
-    @Test
-    public void shouldReturnFalseIfPlayerLooseTheGame() {
-        Player player = mock(Player.class);
-        when(player.getNumberOfPokedCoins()).thenReturn(0);
-
-        player.strike();
-
-        Assert.assertFalse(player.isWin());
+        Assert.assertEquals(expected, 1);
     }
 }
