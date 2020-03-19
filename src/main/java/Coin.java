@@ -1,3 +1,3 @@
 public enum Coin {
-    BLACK, WHITE;
+    BLACK, WHITE
 }

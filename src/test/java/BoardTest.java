@@ -1,12 +1,13 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import java.io.PrintStream;
+
+import static org.mockito.Mockito.*;
 
 public class BoardTest {
     @Test
-    public void shouldTypeOfCoinsPlayerIsPlaying() {
+    public void shouldReturnTypeOfCoinsPlayerIsPlaying() {
         Player player1 = new Player();
         Player player2 = new Player();
         Board board = new Board(player1, player2);
@@ -71,16 +72,4 @@ public class BoardTest {
         Assert.assertFalse(expected);
     }
 
-
-    @Test
-    public void shouldReturnWinner() {
-        Player player1 = mock(Player.class);
-        Player player2 = new Player();
-        Board board = new Board(player1, player2);
-        when(player1.strike()).thenReturn(2);
-
-        Player expectedWinner = board.start();
-
-        Assert.assertEquals(expectedWinner, player1);
-    }
 }
