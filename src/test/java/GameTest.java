@@ -9,8 +9,7 @@ public class GameTest {
     public void shouldReturnWinner() {
         Player player1 = mock(Player.class);
         Player player2 = mock(Player.class);
-        Board board = new Board(player1, player2);
-        Game game = new Game(board);
+        Game game = new Game(player1,player2);
         when(player1.strike()).thenReturn(0);
         when(player2.strike()).thenReturn(2, 2, 2, 2, 2);
         PrintStream out = mock(PrintStream.class);
@@ -31,8 +30,7 @@ public class GameTest {
     public void shouldReturnWinnerV2() {
         Player player1 = mock(Player.class);
         Player player2 = mock(Player.class);
-        Board board = new Board(player1, player2);
-        Game game = new Game(board);
+        Game game = new Game(player1,player2);
         when(player1.strike()).thenReturn(2, 2, 0, 2, 2, 1);
         when(player2.strike()).thenReturn(0);
         PrintStream out = mock(PrintStream.class);

@@ -65,20 +65,20 @@ public class Board {
     }
 
 
-    public boolean checkForStrikeChange(int value) {
+    private boolean checkForStrikeChange(int value) {
         return value == 0;
     }
 
-    public void changeStrike() {
+    private void changeStrike() {
         if (currentStrikingPlayer == player1) currentStrikingPlayer = player2;
         else currentStrikingPlayer = player1;
     }
 
-    public Player getCurrentStrikingPlayer() {
+    private Player getCurrentStrikingPlayer() {
         return currentStrikingPlayer;
     }
 
-    public boolean checkForWin(Player player) {
+    private boolean checkForWin(Player player) {
         return (player == player1 && player1Coins.isEmpty()) || (player == player2 && player2Coins.isEmpty());
     }
 }
